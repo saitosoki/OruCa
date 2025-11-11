@@ -1,10 +1,14 @@
 package bean;
 
+import java.sql.Date;
+
 public class mental implements java.io.Serializable {
 
 	private int user_num;
 	private int sentimental;
-	private int date;
+	private Date date;
+
+	public mental() {}
 
 	public int getUser_num() {
 		return user_num;
@@ -14,7 +18,7 @@ public class mental implements java.io.Serializable {
 		return sentimental;
 	}
 
-	public int getDate() {
+	public Date getDate() {
 		return date;
 	}
 
@@ -26,7 +30,7 @@ public class mental implements java.io.Serializable {
 		this.sentimental=sentimental;
 	}
 
-	public void setDate(int date) {
+	public void setDate(Date date) {
 		this.date=date;
 	}
 }
