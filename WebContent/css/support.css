@@ -1,0 +1,206 @@
+@CHARSET "UTF-8";
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* メインコンテナ */
+.container {
+    max-width: 1200px; /* 全体の最大幅 */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 上の段のコンテナ */
+.top-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* 下の段のコンテナ */
+.bottom-row {
+    display: flex;
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-row .card.small-card {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 0;
+}
+
+.bottom-row .card.full-width {
+    width: 100%;
+}
+
+.card-header {
+    padding: 12px 15px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.blue-header { background-color: #4dc2f8; border-bottom: 3px solid #28a9e0; }
+.green-header { background-color: #79c948; border-bottom: 3px solid #5a9e34; }
+.orange-header { background-color: #f78d46; border-bottom: 3px solid #e07436; }
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.scheduler-card .schedule-inputs-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.scheduler-card .date-input {
+    flex-basis: 30%;
+    min-width: 150px;
+}
+
+.scheduler-card .detail-input {
+    flex-basis: 70%;
+    flex-grow: 1;
+}
+
+/* ボタン */
+.action-button {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-log-card .action-button { background-color: #f55b5b; }
+.time-log-card .action-button:hover { background-color: #e04444; }
+
+.scheduler-card .action-button { background-color: #79c948; }
+.scheduler-card .action-button:hover { background-color: #65b33a; }
+
+.goal-card .action-button { background-color: #f78d46; }
+.goal-card .action-button:hover { background-color: #e07436; }
+
+
+@media (max-width: 767px) {
+    .top-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .top-row .card.small-card {
+        width: 100%;
+        max-width: none;
+    }
+    .scheduler-card .schedule-inputs-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .scheduler-card .date-input,
+    .scheduler-card .detail-input {
+        flex-basis: auto;
+    }
+}
+
+.menu-nav-section {
+    max-width: 1200px;
+    margin: 30px auto 40px auto;
+    padding: 0 10px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .menu-nav-section {
+        margin: 20px 0 30px 0;
+        padding: 0 20px;
+        text-align: left;
+    }
+}
