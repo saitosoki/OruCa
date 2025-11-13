@@ -67,6 +67,7 @@ public class UserDaoImpl implements UserDao {
     }
 
 
+
     @Override
     public boolean insert(User user) {
         throw new UnsupportedOperationException("Not implemented yet.");

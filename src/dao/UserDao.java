@@ -1,7 +1,6 @@
 package dao;
 
 import bean.User;
-import java.util.List;
 
 public interface UserDao {
 
@@ -16,3 +15,5 @@ public interface UserDao {
 
     boolean delete(Integer userNum);
 }
+
+

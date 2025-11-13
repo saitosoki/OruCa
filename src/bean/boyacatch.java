@@ -1,14 +1,14 @@
 package bean;
 
 import java.io.Serializable;
-import java.sql.Date; 
+import java.sql.Date;
 
 public class boyacatch implements Serializable {
 
-    private String input;       
-    private String reply;       
-    private int userId;        
-    private Date date;         
+    private String input;
+    private String reply;
+    private int userId;
+    private Date date;
 
     public boyacatch() {
     }
@@ -38,7 +38,7 @@ public class boyacatch implements Serializable {
         this.reply = reply;
     }
 
- 
+
     public void setUserId(int userId) {
         this.userId = userId;
     }
@@ -47,3 +47,5 @@ public class boyacatch implements Serializable {
         this.date = date;
     }
 }
+
+

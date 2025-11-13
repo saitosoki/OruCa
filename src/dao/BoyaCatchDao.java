@@ -13,3 +13,4 @@ public interface BoyaCatchDao {
 
     boolean delete(int userId, java.sql.Date date);
 }
+

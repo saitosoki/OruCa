@@ -33,6 +33,8 @@ public class BoyaCatchDaoimpl implements BoyaCatchDao {
         bean.setDate(rs.getDate("date"));
         return bean;
     }
+
+
     @Override
     public boolean insert(boyacatch entry) {
 
