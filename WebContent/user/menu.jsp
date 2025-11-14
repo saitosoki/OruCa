@@ -16,7 +16,7 @@
         <div class="subtitle-grid">
             <button type="submit" onclick="location.href='physical.html'" class="subtitle-box">フィジカルヘルス</button>
             <button type="submit" onclick="location.href='mental.html'" class="subtitle-box">メンタルヘルス</button>
-            <button type="submit" onclick="location.href='support.html'" class="subtitle-box">集中サポート</button>
+            <button type="submit" onclick="location.href='scheduleForm.jsp'" class="subtitle-box">集中サポート</button>
             <button type="submit" onclick="location.href='optimal.html'" class="subtitle-box">環境最適化</button>
             <button type="submit" onclick="location.href='logout.html'" class="mini-subtitle-box">ログアウト</button>
             <button type="submit" onclick="location.href='manager_login.html'" class="mini-subtitle-box2">上司専用</button>

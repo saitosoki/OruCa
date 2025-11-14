@@ -24,8 +24,7 @@ public class Schedule {
     }
 
     public Date getDate() {
-        return date;student
-        
+        return date;
     }
 
     public void setDate(Date date) {
