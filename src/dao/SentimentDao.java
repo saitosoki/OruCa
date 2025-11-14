@@ -14,7 +14,7 @@ import bean.sentimental;
 
 public class SentimentDao {
 
-	// データベース接続情報（※環境に合わせて変更してください）
+
 	private final String URL = "jdbc:mysql://localhost:3306/your_db_name";
 	private final String USER = "your_user";
 	private final String PASS = "your_password";
@@ -70,7 +70,7 @@ public class SentimentDao {
 		return list;
 	}
 
-	// 指定ユーザー＋日付のデータを1件取得
+
 	public sentimental selectByUserAndDate(int user_num, Date date) {
 		sentimental s = null;
 		String sql = "SELECT * FROM sentiment WHERE user_num = ? AND date = ?";
