@@ -71,8 +71,6 @@
             <h5 class="mb-3 fw-bold" style="color:#28a745;">スケジューラーの管理</h5>
             <form action="schedule" method="post">
                 <div class="mb-3">
-                    <label class="form-label">ユーザー番号</label>
-                    <input type="text" class="form-control" name="userNum" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">日付</label>
