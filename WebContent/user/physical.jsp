@@ -3,7 +3,7 @@
 <%
 
     String initialMinutesStr = request.getParameter("eye_timer");
-    int initialMinutes = 20;
+    int initialMinutes = 30;
 
     if (initialMinutesStr != null && !initialMinutesStr.isEmpty()) {
         try {
@@ -32,7 +32,7 @@
     <div class="feature-container">
 
 
-<!-- ======================= ストレッチ動画 ======================= -->
+<!-- ======================= ストレッチ動画 ============================== -->
 
         <section class="feature feature-video">
             <h2>ストレッチ動画</h2>
@@ -87,15 +87,7 @@
             interval = setInterval(updateCountDown, 1000);
         }
 
-        timerForm.addEventListener('submit', function(event) {
-            const value = parseInt(timerInput.value, 10);
-
-            if (!isNaN(value) && value > 0) {
-                startTimer(value);
-            } else {
-                countdown.textContent = "設定が無効です";
-            }
-        });
+        })
         countdown.textContent = "00:00:00";
     </script>
 
@@ -110,16 +102,66 @@
 
 
 
-<!-- ======================= 休憩通知 ======================= -->
+<!-- ======================= 休憩通知(一時間ごとの) =================================== -->
 
-        <section class="feature feature-notification">
-            <h2>休憩通知</h2>
-            <p class="notification-text">1時間ごとに「立って休憩しましょう」と通知されます</p>
-        </section>
+    <section class="feature feature-notification">
+	    <h2>休憩通知</h2>
+	    <p class="notification-text" id="standUpNotificationStatus">一時間おきの休憩タイマー</p>
+
+	    <button id="startStandUpNotificationBtn" class="submit-button1">休憩通知スタート</button>
+	</section>
+
+	<script>
+	    // 1時間ごとの休憩通知設定
+	    const STAND_UP_INTERVAL_DURATION = 60 * 60 * 1; // 3,600,000ミリ秒 = 1時間
+	    const STAND_UP_MESSAGE = "立って休憩しましょう！";
+	    let standUpAlertIntervalId = null; //
+
+	    const startBtn = document.getElementById('startStandUpNotificationBtn');
+	    const statusText = document.getElementById('standUpNotificationStatus');
+
+	    function toggleStandUpNotification() {
+	        if (standUpAlertIntervalId !== null) {
+	            // 実行中停止処理
+	            clearInterval(standUpAlertIntervalId);
+	            standUpAlertIntervalId = null;
+
+	            // UIの更新
+	            startBtn.textContent = "通知設定を再開する";
+	            statusText.textContent = "実行停止";
+	            startBtn.classList.remove('active'); // 必要であればデザインを切り替えるためのクラスを削除
+	            console.log("休憩通知を停止しました。");
+
+	        } else {
+	            // 停止中の開始処理
+	            // 1時間ごとにアラートを表示するタイマーを開始
+	            standUpAlertIntervalId = setInterval(() => {
+	                alert(STAND_UP_MESSAGE);
+	            }, STAND_UP_INTERVAL_DURATION);
+
+	            startBtn.textContent = "通知を停止する";
+	            statusText.textContent = "通知実行中 (1時間ごと)";
+	            startBtn.classList.add('active');
+
+	            console.log(`1時間ごとの休憩通知を開始しました。Interval ID: ${standUpAlertIntervalId}`);
+	        }
+	    }
+
+	    document.addEventListener('DOMContentLoaded', () => {
+	        if (startBtn) {
+	            startBtn.addEventListener('click', toggleStandUpNotification);
 
 
+	            // 初期表示の状態
+	            if (standUpAlertIntervalId === null) {
+	                 startBtn.textContent = "休憩通知スタート";
+	            }
+	        }
+	    });
+	</script>
 
-<!-- ======================= 水分補給チェック ======================= -->
+
+<!-- ======================= 水分補給チェック ============================ -->
 
         <section class="feature feature-hydration">
             <h2>水分補給チェック</h2>
@@ -142,7 +184,7 @@
                 </select>
         </div>
         <button type="submit" class="submit-button2">記録を送信</button>
-    </form>
+  		 	</form>
         </section>
 
 
@@ -182,7 +224,14 @@
     function updateTimer() {
         if (totalSeconds < 0) {
             clearInterval(timerInterval);
-            countdownDisplay.innerHTML = "残り時間:休憩終了!";
+            countdownDisplay.innerHTML = "お疲れ様!! 目を休ませてね";
+
+            alert("目を休憩してください");
+
+            function a() {
+            	  alert("今クリックしたよね？");
+            	}
+
             return;
         }
         // タイマー表示を更新
@@ -216,7 +265,7 @@
 </script>
 
 <div class="menu-nav-section">
-    <a href="menu.html" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
+    <a href="menu.jsp" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
 </div>
 
 </html>
