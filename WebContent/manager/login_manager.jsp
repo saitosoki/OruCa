@@ -9,6 +9,7 @@
     <p>ユーザID / パスワードをご入力の上、「ログイン」ボタンをクリックしてください。</p>
 
   <div>
+
     <input type="id" name="user_id" placeholder="ユーザーIDを入力してください"><br>
     <input type="password" name="password"placeholder="パスワードを入力してください">
   </div>
