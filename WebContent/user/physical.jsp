@@ -87,7 +87,7 @@
             interval = setInterval(updateCountDown, 1000);
         }
 
-        })
+        }
         countdown.textContent = "00:00:00";
     </script>
 
@@ -128,7 +128,7 @@
 
 	            // UIの更新
 	            startBtn.textContent = "通知設定を再開する";
-	            statusText.textContent = "実行停止";
+	            statusText.textContent = "実行停止中";
 	            startBtn.classList.remove('active'); // 必要であればデザインを切り替えるためのクラスを削除
 	            console.log("休憩通知を停止しました。");
 
