@@ -152,7 +152,7 @@
 </body>
 
 <div class="menu-nav-section">
-    <a href="menu.html" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
+    <a href="menu.jsp" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
 </div>
 
 </html>
