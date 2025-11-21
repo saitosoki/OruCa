@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page isELIgnored="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 
     String initialMinutesStr = request.getParameter("eye_timer");
@@ -22,7 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>フィジカルヘルス</title>
-    <link rel="stylesheet" href="../css/physical.css">
+    <link rel="stylesheet" href="./css/physical.css">
 </head>
 
 
@@ -34,15 +35,29 @@
 
 <!-- ======================= ストレッチ動画 ======================= -->
 
-        <section class="feature feature-video">
-            <h2>ストレッチ動画</h2>
-            <p>首・肩・腰のストレッチ動画</p>
-            <div class="video-placeholder">
-                <p>ここにストレッチ動画プレイヤーが表示</p>
-                <a href="${url}">動画</a>
-                </div>
-        </section>
+<section class="feature feature-video">
+    <h2>ストレッチ動画</h2>
+    <p>首・肩・腰のストレッチ動画</p>
 
+    <div class="video-placeholder">
+
+
+        <!-- StretchVideoServlet が setAttribute("videos", List<StretchVideo>) で渡す前提 -->
+        <%--<c:forEach var="v" items="${videos}"> --%>
+            <div class="video-item">
+                <%-- <a href="${v.videoUrl}" target="_blank"> --%>
+
+					<%-- 以下の行で変数を作成する必要がる --%>
+					<% String videoUrl = (String) request.getAttribute("videoUrl"); %>
+                	<a href="<%= videoUrl %>" target="_blank">
+
+                	<% int videoNo = (int) request.getAttribute("videoNo"); %>
+                    ストレッチ番号 <%= videoNo %> の動画を見る
+                </a>
+            </div>
+        <%-- </c:forEach> --%>
+    </div>
+</section>
 
 <!-- ======================= 目の休憩タイマー設定 ======================= -->
 
