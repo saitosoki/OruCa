@@ -14,7 +14,7 @@
             <h1>OruCaメニュー画面</h1>
         </div>
         <div class="subtitle-grid">
-            <button type="submit" onclick="location.href='physical.jsp'" class="subtitle-box">フィジカルヘルス</button>
+            <button type="submit" onclick="location.href='<%= request.getContextPath() %>/stretchVideo'" class="subtitle-box">フィジカルヘルス</button>
             <button type="submit" onclick="location.href='mental.jsp'" class="subtitle-box">メンタルヘルス</button>
             <button type="submit" onclick="location.href='scheduleForm.jsp'" class="subtitle-box">集中サポート</button>
             <button type="submit" onclick="location.href='optimal.jsp'" class="subtitle-box">環境最適化</button>

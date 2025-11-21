@@ -280,7 +280,7 @@
 </script>
 
 <div class="menu-nav-section">
-    <a href="menu.jsp" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
+    <a href="<%= request.getContextPath() %>/user/menu.jsp" class="btn btn-secondary-light return-menu-btn">メニュー画面に戻る</a>
 </div>
 
 </html>
