@@ -57,8 +57,8 @@ h2 {
 .video-placeholder {
     width: 100%;
     height: 180px;
-    background-color: #343a40;
-    color: #fff;
+    background-color: #80ffff;
+    color: #ff0000;
     display: flex;
     justify-content: center;
     align-items: center;
