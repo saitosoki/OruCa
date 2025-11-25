@@ -1,0 +1,19 @@
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+    # ... 他のビルドステップ ...
+    - name: Run application or deployment
+      # ここでSecretsを環境変数として渡す
+      env:
+        API_KEY: ${{ secrets.AI_API_KEY }}
+      run: |
+        # アプリケーションの実行やデプロイコマンド
+        # 例: java -jar myapp.jar
+        # デプロイ先（例: Tomcatやクラウドサービス）の環境変数として設定する処理もここに含まれる
