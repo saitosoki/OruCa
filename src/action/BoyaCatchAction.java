@@ -21,13 +21,18 @@ import dao.BoyaCatchDaoimpl;
 public class BoyaCatchAction extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-
+    private static final String API_KEY = System.getenv("AI_API_KEY");
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    		throws ServletException, IOException {
+    	this.doPost(request, response);
+//    	System.out.print(API_KEY);
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
+//    	System.out.print(API_KEY);
         request.setCharacterEncoding("UTF-8");
 
 
