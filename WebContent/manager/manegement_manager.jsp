@@ -1,42 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Manegement_manager" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マネージャー管理</title>
-    <link rel="stylesheet" href="../css/manegement_manager.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/manegement_manager.css">
 </head>
 <body>
 
     <h1>マネージャー管理</h1>
 
-    <!-- 管理対象の部下を選択画面 -->
+      <!-- 管理対象の部下を選択画面（DBから取得版） -->
     <section id="subordinate-selection" class="card">
         <h2>管理対象の部下を選択</h2>
-        <form id="select-subordinate-form">
+
+        <!-- サーブレットから渡された subordinateList を利用 -->
+        <form action="ManagementManagerServlet" method="get">
 
             <div class="form-group">
-            <label for="department-select">部署を選んでください:</label>
-            <select id="department-select" name="department">
-                <option value="" disabled selected>(例)開発部</option>
-                <option value="sales">(例)営業部</option>
-                <option value="hr">(例)人事部</option>
-            </select>
+                <label for="department-select">部署を選んでください:</label>
+                <select id="department-select" name="deptId" required>
+                    <option value="">------</option>
+
+                    <%-- 部署を JSP 表示するリスト（deptList）想定 --%>
+                    <%
+                    List<Manegement_manager> deptList =
+                            (List<Manegement_manager>) request.getAttribute("deptList");
+
+                        if (deptList != null) {
+                            for (Manegement_manager d : deptList) {
+                    %>
+                                <option value="<%= d.getDeptId() %>">
+                                    <%= d.getDeptName() %>
+                                </option>
+                    <%      }
+                        }
+                    %>
+                </select>
+            </div>
 
             <div class="form-group">
                 <label for="subordinate-user">部下を選んでください:</label>
-                <select id="subordinate-user" required>
+                <select id="subordinate-user" name="subId" required>
                     <option value="">------</option>
-                    <option value="user-a" selected>(例)部下A</option>
-                    <option value="user-b">(例)部下B</option>
-                    <option value="user-c">(例)部下C</option>
-                    </select>
+
+                    <%-- 部下一覧を表示（subordinateList） --%>
+                    <%
+                        List<Manegement_manager> subList =
+                            (List<Manegement_manager>) request.getAttribute("subordinateList");
+
+                        if (subList != null) {
+                            for (Manegement_manager s : subList) {
+                    %>
+                                <option value="<%= s.getSubId() %>">
+                                    <%= s.getSubName() %>
+                                </option>
+                    <%      }
+                        }
+                    %>
+                </select>
             </div>
-            </form>
-        <p class="selected-info">(例)現在、部下Aさんの情報を表示・操作しています。</p>
+
+            <button type="submit" class="submit-btn">部下を選択</button>
+        </form>
+
+        <%-- 選択された部下の情報表示（任意） --%>
+        <%
+            String selectedInfo =
+                (String) request.getAttribute("selectedInfo");
+            if (selectedInfo != null) {
+        %>
+            <p class="selected-info"><%= selectedInfo %></p>
+        <% } %>
+
     </section>
+
     <main>
 
     <!-- 憩を促す時間設定 -->
