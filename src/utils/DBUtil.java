@@ -1,21 +1,33 @@
 package utils;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DBUtil {
 
-    private static final String URL = "jdbc:h2:tcp://localhost/~/oruca";
-    private static final String USER = "sa";     // あなたのユーザー名
-    private static final String PASS = ""; // あなたのパスワード
+	 private static final String URL = "jdbc:h2:tcp://localhost/~/oruca";
 
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("org.h2.Driver");  // MySQLドライバ
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+	    private static final String USER = "sa";
+
+	    private static final String PASSWORD = "";
+
+	    // JDBCドライバの読み込み（初回のみ）
+
+	    static {
+
+	        try {
+
+	            Class.forName("org.h2.Driver");
+
+	        } catch (ClassNotFoundException e) {
+
+	            e.printStackTrace();
+
+	        }
+
         }
-        return DriverManager.getConnection(URL, USER, PASS);
-    }
-}
+
+		public static Connection getConnection() {
+			// TODO 自動生成されたメソッド・スタブ
+			return null;
+		}
+	}
