@@ -1,6 +1,8 @@
 package utils;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBUtil {
 
@@ -26,8 +28,8 @@ public class DBUtil {
 
         }
 
-		public static Connection getConnection() {
+		public static Connection getConnection() throws SQLException {
 			// TODO 自動生成されたメソッド・スタブ
-			return null;
+			return DriverManager.getConnection(URL, USER, PASSWORD);
 		}
 	}
