@@ -17,15 +17,23 @@ public class Manegement_managerDao {
 
         List<Manegement_manager> list = new ArrayList<>();
 
+//        String sql = "SELECT "
+//                   + "d.dept_id, "
+//                   + "d.dept_name, "
+//                   + "s.sub_id, "
+//                   + "s.sub_name "
+//                   + "FROM department d "
+//                   + "JOIN subordinate s "
+//                   + "ON d.dept_id = s.dept_id "
+//                   + "ORDER BY d.dept_id, s.sub_id";
+
         String sql = "SELECT "
-                   + "d.dept_id, "
-                   + "d.dept_name, "
-                   + "s.sub_id, "
-                   + "s.sub_name "
-                   + "FROM department d "
-                   + "JOIN subordinate s "
-                   + "ON d.dept_id = s.dept_id "
-                   + "ORDER BY d.dept_id, s.sub_id";
+        		+ "NAME"
+        		+ "DEPARTMENT_NUM"
+        		+ "FROM USER"
+        		+ "ORDER BY NAME, DEPARTMENT_NUM";
+
+
 
         try (Connection con = DBUtil.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);
@@ -33,15 +41,14 @@ public class Manegement_managerDao {
 
             while (rs.next()) {
 
-                int deptId = rs.getInt("dept_id");
-                String deptName = rs.getString("dept_name");
+                String DEPARTMENT_NUM = rs.getString("DEPARTMENT_NUM");
 
-                int subId = rs.getInt("sub_id");
-                String subName = rs.getString("sub_name");
+
+                String NAME = rs.getString("NAME");
 
                 // あなたの Bean に合わせて生成
                 Manegement_manager bean =
-                    new Manegement_manager(deptId, deptName, subId, subName);
+                    new Manegement_manager( DEPARTMENT_NUM,  NAME);
 
                 list.add(bean);
             }
