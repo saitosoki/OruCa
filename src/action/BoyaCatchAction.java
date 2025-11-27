@@ -184,6 +184,7 @@ public class BoyaCatchAction extends HttpServlet {
             System.err.println("JSON文字列解析エラー: インデックスが範囲外です。");
             e.printStackTrace();
             return "AIからの応答解析中にエラーが発生しました。";
+
         }
     }
 }
