@@ -27,7 +27,7 @@ public class Manegement_managerServlet extends HttpServlet {
         request.setAttribute("manegerList", list);
 
         // 画面へ転送
-        request.getRequestDispatcher("/manager/manegement_manager.jsp")
+        request.getRequestDispatcher("manager/manegement_manager.jsp")
         .forward(request, response);
 
     }
