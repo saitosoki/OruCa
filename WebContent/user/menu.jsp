@@ -17,7 +17,7 @@
             <button type="submit" onclick="location.href='<%= request.getContextPath() %>/stretchVideo'" class="subtitle-box">フィジカルヘルス</button>
             <button type="submit" onclick="location.href='mental.jsp'" class="subtitle-box">メンタルヘルス</button>
             <button type="submit" onclick="location.href='scheduleForm.jsp'" class="subtitle-box">集中サポート</button>
-            <button type="submit" onclick="location.href='optimal.jsp'" class="subtitle-box">環境最適化</button>
+            <button type="submit" onclick="location.href='brightness.jsp'" class="subtitle-box">環境最適化</button>
             <button type="submit" onclick="location.href='logout.jsp'" class="mini-subtitle-box">ログアウト</button>
             <button type="submit" onclick="location.href='manager/login_manager.jsp'" class="mini-subtitle-box2">上司専用</button>
         </div>
