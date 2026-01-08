@@ -29,13 +29,13 @@
                     <%-- 部署を JSP 表示するリスト（deptList）想定 --%>
                     <%
                     List<Manegement_manager> deptList =
-                            (List<Manegement_manager>) request.getAttribute("deptList");
+                            (List<Manegement_manager>) request.getAttribute("manegerList");
 
                         if (deptList != null) {
                             for (Manegement_manager d : deptList) {
                     %>
-                                <option value="<%= d.getDeptId() %>">
-                                    <%= d.getDeptName() %>
+                                <option value="<%= d.getDEPARTMENT_NUM() %>">
+                                    <%= d.getDEPARTMENT_NUM() %>
                                 </option>
                     <%      }
                         }
@@ -51,13 +51,13 @@
                     <%-- 部下一覧を表示（subordinateList） --%>
                     <%
                         List<Manegement_manager> subList =
-                            (List<Manegement_manager>) request.getAttribute("subordinateList");
+                            (List<Manegement_manager>) request.getAttribute("managerList");
 
                         if (subList != null) {
                             for (Manegement_manager s : subList) {
                     %>
-                                <option value="<%= s.getSubId() %>">
-                                    <%= s.getSubName() %>
+                                <option value="<%= s.getNAME() %>">
+                                    <%= s.getNAME() %>
                                 </option>
                     <%      }
                         }

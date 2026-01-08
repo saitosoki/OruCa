@@ -16,7 +16,7 @@ public class Manegement_manager {
     }
 
 
-    public String getDeptName() {
+    public String getDEPARTMENT_NUM() {
         return DEPARTMENT_NUM;
     }
 
