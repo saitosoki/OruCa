@@ -1,0 +1,102 @@
+/* 全体の背景：少しだけ濃いめの落ち着いた色に */
+body {
+    background-color: #dce7f1;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* カード：影を少し強くして立体感を出す */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 950px;
+}
+
+/* 見出し：色を濃い紺色にして強調 */
+h2 {
+    color: #1a2a3a;
+    font-size: 26px;
+    margin-bottom: 25px;
+    border-left: 5px solid #3ba2db; /* 左側にアクセントライン */
+    padding-left: 15px;
+}
+
+/* テーブル全体 */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    border: 1px solid #ccc; /* 外枠をしっかり引く */
+}
+
+/* ヘッダー：より濃い紺色で文字を白く */
+.history-table th {
+    background-color: #1e3a56;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* データ行 */
+.history-table td {
+    padding: 18px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #222; /* 文字色を濃い黒に */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 1行おきに背景色をつけて見やすくする */
+.history-table tbody tr:nth-child(even) {
+    background-color: #f8fbff;
+}
+
+/* マウスを乗せた行を強調 */
+.history-table tbody tr:hover {
+    background-color: #edf5ff;
+}
+
+/* 日時列だけ少し細字に */
+.history-table td:first-child {
+    color: #555;
+    font-weight: normal;
+}
+
+/* ボタンコンテナ */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ボタン：サイズを大きく、色を鮮やかに */
+.btn {
+    display: inline-block;
+    padding: 15px 45px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(59, 162, 219, 0.3);
+}
+
+.btn-blue {
+    background-color: #3ba2db;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #298ec7;
+    transform: translateY(-2px); /* 少し浮き上がる演出 */
+    box-shadow: 0 6px 15px rgba(59, 162, 219, 0.4);
+}
