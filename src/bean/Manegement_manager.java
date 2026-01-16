@@ -1,35 +1,30 @@
 package bean;
 
 public class Manegement_manager {
-
-
-    private String DEPARTMENT_NUM;   // 部署名
-
-
-    private String NAME;    // 部下名
+    private String name;
+    private String email;
+    private String departmentNum;
+    private int id;
 
     public Manegement_manager() {}
 
-    public Manegement_manager ( String DEPARTMENT_NUM,  String NAME) {
-        this.DEPARTMENT_NUM = DEPARTMENT_NUM;
-        this.NAME = NAME;
+    public Manegement_manager(String departmentNum, String name) {
+        this.departmentNum = departmentNum;
+        this.name = name;
     }
 
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getDEPARTMENT_NUM() {
-        return DEPARTMENT_NUM;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setDEPARTMENT_NUM(String DEPARTMENT_NUM) {
-        this.DEPARTMENT_NUM = DEPARTMENT_NUM;
-    }
+    public String getDepartmentNum() { return departmentNum; }
+    public void setDepartmentNum(String departmentNum) { this.departmentNum = departmentNum; }
 
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getNAME() {
-        return NAME;
-    }
-
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
-    }
+    public int getUserNum() { return id; }
+    public void setUserNum(int userNum) { this.id = userNum; }
 }
