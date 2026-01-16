@@ -12,9 +12,9 @@ body {
 
 .container {
     width: 800px;
-    padding: 40px;
+    padding: 60px;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -33,61 +33,42 @@ body {
     font-weight: bold;
 }
 
+/* グリッドの設定 */
 .subtitle-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
+/* 全ボタン共通の設定（高さを完璧に揃えるための修正） */
+.subtitle-box,
+.mini-subtitle-box,
+.mini-subtitle-box2 {
+    width: 100%;           /* 横幅をグリッドに合わせる */
+    padding: 30px 10px;    /* 上下30px、左右10px */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid white; /* 枠線を白で固定 */
+    border-radius: 8px;
+    box-sizing: border-box;  /* paddingとborderを高さに含める（重要！） */
+    transition: background-color 0.3s, transform 0.1s;
+    display: block;        /* ボタンの振る舞いを統一 */
+    line-height: 1.2;      /* 行の高さを固定してズレを防止 */
+}
+
+/* 各ボタンの色指定 */
 .subtitle-box {
     background-color: #007bff;
-    color: white;
-    padding: 30px;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.mini-subtitle-box{
+.mini-subtitle-box {
     background-color: #2b3846;
-    color: white;
-    padding:10px;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.mini-subtitle-box2{
+.mini-subtitle-box2 {
     background-color: #59bb78;
-    color: white;
-    padding:10px;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.button[type="submit"] {
-    transition: background-color 0.3s, transform 0.1s;
-    margin-top: 10px;
-}
-
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-button[type="submit"]:active {
-    transform: translateY(1px);
-}
