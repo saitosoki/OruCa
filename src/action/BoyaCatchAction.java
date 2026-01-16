@@ -42,9 +42,9 @@ public class BoyaCatchAction extends HttpServlet {
         Integer userId = (Integer) request.getSession().getAttribute("userNum");
         if (userId == null) {
             request.setAttribute("chatResult", "エラー: ログインユーザー情報がセッションに見つかりません。");
-            request.getRequestDispatcher("/user/mental.jsp").forward(request, response);
+            request.getRequestDispatcher("user/mental.jsp").forward(request, response);
             return;
-        }
+        	}
 
         if (userInput == null || userInput.trim().isEmpty()) {
             request.setAttribute("chatResult", "エラー: 入力内容がありません。");
