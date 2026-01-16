@@ -1,16 +1,10 @@
-//1.DAOから動画のURLを取得する
-
-
-		//2.取得したURLをjspに埋め込む
-
-
-		//3.jspを表示する
-
 package physical;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,78 +12,47 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.StretchVideo;
-import dao.StretchVideoDao;
-
-@WebServlet("/stretchVideo")
+@WebServlet("/physical")
 public class Physical extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
-    private StretchVideoDao dao = new StretchVideoDao();
+    // 画像の接続情報に基づいた設定
+    private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/oruca";
+    private static final String USER = "sa";
+    private static final String PASS = "";
 
-    // --- GET：一覧表示 ---
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<StretchVideo> list = dao.findAll();
+        String selectedUrl = "";
+        int stretchNum = 0;
 
+        // ランダムに1件取得するSQL
+        String sql = "SELECT VIDEO_URL, STRETCH_NUM FROM PHYSICAL ORDER BY RAND() LIMIT 1";
 
-        /*
-         * 1.list変数からランダムに1つ選ぶ。
-         */
-        int index = ThreadLocalRandom.current().nextInt(list.size());
-        StretchVideo pick = list.get(index);
+        try {
+            Class.forName("org.h2.Driver");
+            try (Connection conn = DriverManager.getConnection(JDBC_URL, USER, PASS);
+                 PreparedStatement pstmt = conn.prepareStatement(sql);
+                 ResultSet rs = pstmt.executeQuery()) {
 
-        /*
-         * 2.選んだbeanのデータをvideoUrlとvideoNoに格納する
-         */
+                if (rs.next()) {
+                    selectedUrl = rs.getString("VIDEO_URL");
+                    stretchNum = rs.getInt("STRETCH_NUM");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-    	request.setAttribute("videoUrl", pick.getVideoUrl());
-        request.setAttribute("videoNo", pick.getStretchNum());
+        // JSPへ渡す値をセット
+        request.setAttribute("videoUrl", selectedUrl);
+        request.setAttribute("videoNo", stretchNum); // STRETCH_NUMを表示用番号として使用
 
-        /********
-         * sample
-        // JSPにデータを渡す
-    	String url="https://www.bing.com/videos/riverview/relatedvideo?q=neko+youtube&&mid=AF21CBDA31A5799845CAAF21CBDA31A5799845CA&FORM=VAMGZC";
-
-    	request.setAttribute("videoUrl", url);
-        request.setAttribute("videoNo", "1");
-         *********/
-
-        // JSP に一覧を渡す
-//      request.setAttribute("videos", list);
-
-
-        // 一覧表示用 JSP へフォワード
-//        request.getRequestDispatcher("/WEB-INF/stretchVideoList.jsp")
-//               .forward(request, response);
-
-
-        request.getRequestDispatcher("/user/physical.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/physical.jsp").forward(request, response);
     }
 
-    // --- POST：登録処理 ---
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//
-//        request.setCharacterEncoding("UTF-8");
-//
-//        // フォームから受け取り
-//        String videoUrl = request.getParameter("videoUrl");
-//        String stretchNumStr = request.getParameter("stretchNum");
-//
-//        int stretchNum = Integer.parseInt(stretchNumStr);
-//
-//        // Bean へセット
-//        StretchVideo video = new StretchVideo(videoUrl, stretchNum);
-//
-//        // DB に保存
-////        dao.insert(video);
-//
-//        // 登録後に一覧へリダイレクト
-//        response.sendRedirect(request.getContextPath() + "/stretchVideo");
-    	this.doGet(request, response);
+        doGet(request, response);
     }
 }
