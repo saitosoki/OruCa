@@ -17,12 +17,11 @@ public class MentalHistoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 1. リクエストから「name」パラメータを受け取る
-        request.setCharacterEncoding("UTF-8"); // 文字化け防止
+
+        request.setCharacterEncoding("UTF-8");
         String targetName = request.getParameter("name");
 
-        // ★修正ポイント：固定していた「山田太郎」を消して、
-        // 取得した targetName が空でない場合のみ検索する
+
         if (targetName != null && !targetName.isEmpty()) {
             targetName = targetName.trim();
 

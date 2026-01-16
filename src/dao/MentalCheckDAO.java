@@ -49,10 +49,10 @@ public class MentalCheckDAO {
     /**
      * 特定のユーザーの名前で回答履歴を最新順に取得する
      */
- // MentalCheckDAO.java の findByName メソッド内
+
     public List<MentalCheck> findByName(String name) {
         List<MentalCheck> list = new ArrayList<>();
-        // SQLをシンプルにする（WHERE句のミスを防ぐ）
+
         String sql = "SELECT * FROM MENTAL_CHECK WHERE NAME = ? ORDER BY ID DESC";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -69,13 +69,11 @@ public class MentalCheckDAO {
                     mc.setQ4(rs.getString("Q4"));
                     mc.setQ5(rs.getString("Q5"));
 
-                    // ★日付の取得：列番号ではなく「列名」で指定するのが一番確実です。
-                    // image_e9bb64 を見ると、一番右の列名は恐らく「DATE」や「CREATED_AT」ではありませんか？
-                    // もしわからなければ、一旦 rs.getTimestamp(9) か rs.getTimestamp(10) を試してください。
+
                     try {
                         mc.setDate(rs.getTimestamp(9));
                     } catch (Exception e) {
-                        // 9番目でダメなら10番目を試す（安全策）
+
                         mc.setDate(rs.getTimestamp(10));
                     }
 

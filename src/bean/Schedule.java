@@ -1,7 +1,6 @@
-package bean;  // ★ パッケージを明記（ここが重要！）
+package bean;
 
-import java.sql.Date;  // ★ Date型をimportして省略できるようにする
-
+import java.sql.Date;
 public class Schedule {
     private int userNum;
     private Date date;

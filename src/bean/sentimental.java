@@ -4,9 +4,9 @@ import java.sql.Date;
 
 public class sentimental implements java.io.Serializable {
 
-	private int user_num;              // 利用者番号
-	private int sentiment_score_num;   // 感情スコア
-	private Date date;                 // 日付
+	private int user_num;
+	private int sentiment_score_num;
+	private Date date;
 
 	public sentimental() {}
 

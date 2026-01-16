@@ -20,7 +20,7 @@ public class Login_managerServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        //ここでIDとパス入れる↓↓↓↓
+
         String loginId = request.getParameter("login");
         String password = request.getParameter("password");
 
@@ -29,7 +29,7 @@ public class Login_managerServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        //ログインが上手くいった時とだめだった時↓↓↓↓
+
         try {
         	customer = dao.search(loginId, password);
 

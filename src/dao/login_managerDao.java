@@ -26,7 +26,7 @@ public class login_managerDao {
         }
     }
 
-    // --- ログイン検索メソッド ---
+
     /**
      * 指定されたログイン名とパスワードを持つユーザーをデータベースから検索する。
      * @param login ユーザーが入力したログインID
@@ -50,7 +50,6 @@ public class login_managerDao {
                 return null;
             }
 
-            // データベース接続を取得
 
             con = getConnection();
             st = con.prepareStatement(

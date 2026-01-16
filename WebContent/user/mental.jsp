@@ -18,7 +18,7 @@
     <h1>メンタルヘルス</h1>
     <main class="container">
         <%
-            // 2. instanceof を使って安全に名前を取得する
+
             Object loginObj = session.getAttribute("user");
             String userName = "ゲスト";
 

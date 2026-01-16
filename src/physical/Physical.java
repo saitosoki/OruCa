@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/physical")
 public class Physical extends HttpServlet {
 
-    // 画像の接続情報に基づいた設定
+
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/oruca";
     private static final String USER = "sa";
     private static final String PASS = "";
@@ -26,7 +26,7 @@ public class Physical extends HttpServlet {
         String selectedUrl = "";
         int stretchNum = 0;
 
-        // ランダムに1件取得するSQL
+
         String sql = "SELECT VIDEO_URL, STRETCH_NUM FROM PHYSICAL ORDER BY RAND() LIMIT 1";
 
         try {
@@ -44,9 +44,9 @@ public class Physical extends HttpServlet {
             e.printStackTrace();
         }
 
-        // JSPへ渡す値をセット
+
         request.setAttribute("videoUrl", selectedUrl);
-        request.setAttribute("videoNo", stretchNum); // STRETCH_NUMを表示用番号として使用
+        request.setAttribute("videoNo", stretchNum);
 
         request.getRequestDispatcher("/WEB-INF/jsp/physical.jsp").forward(request, response);
     }

@@ -14,15 +14,15 @@
 <body>
     <div class="container">
         <%
-            // 2. 一旦 Object で受け取り、instanceof で型を判定する
+
             Object loginObj = session.getAttribute("user");
             String userName = "ゲスト";
 
             if (loginObj instanceof LoginAction) {
-                // 一般ユーザーの場合
+
                 userName = ((LoginAction) loginObj).getName();
             } else if (loginObj instanceof Manegement_manager) {
-                // マネージャーの場合
+
                 userName = ((Manegement_manager) loginObj).getName();
             }
         %>

@@ -23,20 +23,20 @@ public class MentalCheckAction extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
 
-        // 1. セッションからObject型で取得（キャストエラー防止）
+
         Object loginObj = session.getAttribute("user");
 
-        // 2. フォームからアンケート回答を取得
+
         String q1 = request.getParameter("e1");
         String q2 = request.getParameter("e2");
         String q3 = request.getParameter("e3");
         String q4 = request.getParameter("e4");
         String q5 = request.getParameter("e5");
 
-        // Beanにデータを詰め込む
+
         MentalCheck mc = new MentalCheck();
 
-        // 3. 型をチェックしてデータをセットする（どちらのログインでも動くようにする）
+
         if (loginObj instanceof LoginAction) {
             LoginAction user = (LoginAction) loginObj;
             mc.setName(user.getName());
@@ -49,18 +49,18 @@ public class MentalCheckAction extends HttpServlet {
             mc.setUserNum(9999);
         }
 
-        // 4. 変換メソッドを使って☆マークにセット
+
         mc.setQ1(convertToStar(q1));
         mc.setQ2(convertToStar(q2));
         mc.setQ3(convertToStar(q3));
         mc.setQ4(convertToStar(q4));
         mc.setQ5(convertToStar(q5));
 
-        // DAOを使って保存実行
+
         MentalCheckDAO dao = new MentalCheckDAO();
         int result = dao.insert(mc);
 
-        // 結果画面へ移動
+
         if (result > 0) {
             response.sendRedirect(request.getContextPath() + "/user/mental.jsp?success=1");
         } else {

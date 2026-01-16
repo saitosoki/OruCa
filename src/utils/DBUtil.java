@@ -12,7 +12,7 @@ public class DBUtil {
 
 	    private static final String PASSWORD = "";
 
-	    // JDBCドライバの読み込み（初回のみ）
+
 
 	    static {
 
@@ -29,7 +29,7 @@ public class DBUtil {
         }
 
 		public static Connection getConnection() throws SQLException {
-			// TODO 自動生成されたメソッド・スタブ
+
 			return DriverManager.getConnection(URL, USER, PASSWORD);
 		}
 	}
