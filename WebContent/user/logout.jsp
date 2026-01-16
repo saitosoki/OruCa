@@ -15,7 +15,7 @@
         </svg>
         <h1>ログアウト完了</h1>
         <p>OruCaサービスからログアウトしました。<br>ご利用ありがとうございました。</p>
-        <button type="submit" onclick="location.href='login.html'" class="return-button">ログイン画面へ戻る</button>
+        <button type="submit" onclick="location.href='login.jsp'" class="return-button">ログイン画面へ戻る</button>
     </div>
 </body>
 </html>

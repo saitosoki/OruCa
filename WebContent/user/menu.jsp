@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%-- 1. 両方のクラスをインポートしておく --%>
+<%@ page import="action.LoginAction" %>
+<%@ page import="bean.Manegement_manager" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ja">
 <head>
@@ -10,16 +13,32 @@
 </head>
 <body>
     <div class="container">
+        <%
+            // 2. 一旦 Object で受け取り、instanceof で型を判定する
+            Object loginObj = session.getAttribute("user");
+            String userName = "ゲスト";
+
+            if (loginObj instanceof LoginAction) {
+                // 一般ユーザーの場合
+                userName = ((LoginAction) loginObj).getName();
+            } else if (loginObj instanceof Manegement_manager) {
+                // マネージャーの場合
+                userName = ((Manegement_manager) loginObj).getName();
+            }
+        %>
+        <%-- 3. ログイン中の名前を表示 --%>
+        <p style="text-align: right; color: #555; padding-right: 20px;">
+            ログイン中：<strong><%= userName %></strong> 様
+        </p>
+
         <div class="title-box">
             <h1>OruCaメニュー画面</h1>
         </div>
         <div class="subtitle-grid">
-            <button type="submit" onclick="location.href='<%= request.getContextPath() %>/stretchVideo'" class="subtitle-box">フィジカルヘルス</button>
+            <button type="submit" onclick="location.href='physical.jsp'" class="subtitle-box">フィジカルヘルス</button>
             <button type="submit" onclick="location.href='mental.jsp'" class="subtitle-box">メンタルヘルス</button>
-            <button type="submit" onclick="location.href='scheduleForm.jsp'" class="subtitle-box">集中サポート</button>
-            <button type="submit" onclick="location.href='brightness.jsp'" class="subtitle-box">環境最適化</button>
             <button type="submit" onclick="location.href='logout.jsp'" class="mini-subtitle-box">ログアウト</button>
-            <button type="submit" onclick="location.href='manager/login_manager.jsp'" class="mini-subtitle-box2">上司専用</button>
+            <button type="submit" onclick="location.href='<%= request.getContextPath() %>/manager/login_manager.jsp'" class="mini-subtitle-box2">マネージャー専用</button>
         </div>
     </div>
 </body>
