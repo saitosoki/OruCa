@@ -8,7 +8,6 @@ public class Login_managerAction implements Serializable {
     private String login;
     private String password;
 
-    // --- ゲットメソッド↓↓↓↓ ---
     public int getId() {
         return id;
     }
@@ -21,7 +20,6 @@ public class Login_managerAction implements Serializable {
         return password;
     }
 
-    // ---セッターメソッド↓↓↓↓ ---
     public void setId(int id) {
         this.id = id;
     }

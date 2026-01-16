@@ -19,7 +19,6 @@ public class SentimentDao {
 	private final String USER = "your_user";
 	private final String PASS = "your_password";
 
-	// コンストラクタ
 	public SentimentDao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -28,7 +27,6 @@ public class SentimentDao {
 		}
 	}
 
-	// 感情スコアを登録
 	public void insert(sentimental s) {
 		String sql = "INSERT INTO sentiment (user_num, sentiment_score_num, date) VALUES (?, ?, ?)";
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);

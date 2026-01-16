@@ -18,11 +18,9 @@ public class SetGoalAction extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String goal = request.getParameter("goal");
 
-        // 簡単な保存例（今回はセッションに保存するだけ）
         HttpSession session = request.getSession();
         session.setAttribute("todayGoal", goal);
 
-        // goal設定後にスケジュール一覧画面へ移動
         response.sendRedirect("scheduleList.jsp");
     }
 }

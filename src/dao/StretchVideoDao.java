@@ -13,7 +13,6 @@ import bean.StretchVideo;
 
 public class StretchVideoDao {
 
-    // DB接続情報（必要に応じて環境に合わせて変更）
 
     private static final String URL = "jdbc:h2:tcp://localhost/~/oruca";
 
@@ -21,7 +20,6 @@ public class StretchVideoDao {
 
     private static final String PASSWORD = "";
 
-    // JDBCドライバの読み込み（初回のみ）
 
     static {
 
@@ -61,7 +59,6 @@ public class StretchVideoDao {
 
     }
 
-    // --- SELECT（全件取得） ---
 
     public List<StretchVideo> findAll() {
 
@@ -161,7 +158,6 @@ public class StretchVideoDao {
 
     }
 
-    // --- DELETE ---
 
     public void delete(int id) {
 

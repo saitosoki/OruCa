@@ -24,7 +24,6 @@ public class LoginDao {
         }
     }
 
-    // --- ログイン検索メソッド ---
     /**
      * 指定されたログイン名とパスワードを持つユーザーをデータベースから検索する。
      */
@@ -43,10 +42,8 @@ public class LoginDao {
                 return null;
             }
 
-            // データベース接続を取得
             con = getConnection();
 
-            // SQLはそのまま（select * なので全てのカラムが取れます）
             st = con.prepareStatement(
                 "select * from USER where USER_NUM=? and PASSWORD=?"
             );
@@ -63,7 +60,6 @@ public class LoginDao {
                 customer.setLogin(rs.getString("EMAIL"));
                 customer.setPassword(rs.getString("PASSWORD"));
 
-                // ★ 追加：DBの NAME と DEPARTMENT_NUM を取得してセット
                 customer.setName(rs.getString("NAME"));
                 customer.setDepartmentNum(rs.getString("DEPARTMENT_NUM"));
             }

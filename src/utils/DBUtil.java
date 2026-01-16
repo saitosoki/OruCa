@@ -12,7 +12,6 @@ public class DBUtil {
 
 	    private static final String PASSWORD = "";
 
-	    // JDBCドライバの読み込み（初回のみ）
 
 	    static {
 

@@ -19,14 +19,11 @@ public class Manegement_managerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // DAO 呼び出し
         Manegement_managerDao dao = new Manegement_managerDao();
         List<Manegement_manager> list = dao.findAll();
 
-        // JSP に渡す
         request.setAttribute("manegerList", list);
 
-        // 画面へ転送
         request.getRequestDispatcher("manager/manegement_manager.jsp")
         .forward(request, response);
 
