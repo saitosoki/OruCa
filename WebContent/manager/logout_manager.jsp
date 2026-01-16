@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マネージャーログアウト</title>
-    <link rel="stylesheet" href="../css/logout_manager..css">
+    <link rel="stylesheet" href="../css/logot_manager.css">
 </head>
 <body>
     <div class="logout-card">
@@ -16,7 +16,7 @@
         <h1>マネージャーログアウト完了</h1>
         <p>OruCaサービスからログアウトしました。
             <br>ご利用ありがとうございました。</p>
-        <button type="button" class="return-button">ログイン画面へ戻る</button>
+        <button type="button" onclick="location.href='login_manager.jsp'" class="return-button">ログイン画面へ戻る</button>
     </div>
 </body>
 </html>
