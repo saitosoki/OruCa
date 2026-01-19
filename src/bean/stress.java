@@ -4,9 +4,9 @@ import java.sql.Date;
 
 public class stress implements java.io.Serializable {
 
-	private int user_num;             // 利用者番号
-	private int stress_score_num;     // ストレススコア
-	private Date date;                // 日付
+	private int user_num;             
+	private int stress_score_num;     
+	private Date date;                
 
 	public stress() {}
 

@@ -23,7 +23,6 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
-    // --- getter / setter ---
     public String getVideoUrl() {
         return videoUrl;
     }
@@ -40,7 +39,6 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
-    // --- デバッグ用 toString ---
     @Override
     public String toString() {
         return "StretchVideoBean[" +

@@ -134,3 +134,52 @@ tr:hover td {
     background-color: #c0392b;
     transform: translateY(-2px);
 }
+
+/* --- 既存のCSSに以下を追記・修正 --- */
+
+/* ボタンを横並びにするためのコンテナ */
+.action-buttons {
+    display: flex;
+    gap: 8px; /* ボタン同士の隙間 */
+    justify-content: flex-start;
+}
+
+/* 共通のボタンデザイン修正（少し幅を安定させる） */
+.btn-history {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #6c5ce7; /* 感情記録用：紫 */
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    white-space: nowrap; /* 改行防止 */
+}
+
+/* ストレス度ボタン専用の色（オレンジ） */
+.btn-stress {
+    background-color: #e67e22;
+}
+
+.btn-stress:hover {
+    background-color: #f39c12;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+}
+
+.btn-history:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* --- 以下、既存の他のスタイルはそのまま --- */
+body {
+    font-family: 'Segoe UI', Meiryo, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    margin: 0;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+/* ...（中略）... */

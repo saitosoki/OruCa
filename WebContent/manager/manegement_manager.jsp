@@ -34,7 +34,7 @@
 
                 while (rs.next()) {
                     String dept = rs.getString("DEPARTMENT_NUM");
-                    int userNum = rs.getInt("USER_NUM"); //
+                    int userNum = rs.getInt("USER_NUM");
 
                     String deptClass = "dept-other";
                     if ("人事".equals(dept) || "人事部".equals(dept)) {
@@ -54,10 +54,17 @@
                             <span class="dept-badge <%= deptClass %>"><%= dept %></span>
                         </td>
                         <td>
-						    <a href="<%=request.getContextPath()%>/MentalHistoryServlet?userNum=<%= userNum %>&name=<%= rs.getString("NAME") %>" class="btn-history">
-						        アンケート結果
-						    </a>
-						</td>
+                            <div class="action-buttons">
+                                <%-- 既存の感情記録ボタン --%>
+                                <a href="<%=request.getContextPath()%>/MentalHistoryServlet?userNum=<%= userNum %>&name=<%= rs.getString("NAME") %>" class="btn-history">
+                                    感情記録
+                                </a>
+                                <%-- 新設のストレス度ボタン --%>
+                                <a href="<%=request.getContextPath()%>/StressHistoryServlet?userNum=<%= userNum %>&name=<%= rs.getString("NAME") %>" class="btn-history btn-stress">
+                                    ストレス度
+                                </a>
+                            </div>
+                        </td>
                     </tr>
         <%
                 }
@@ -69,7 +76,6 @@
     </table>
 
     <div class="button-group">
-        <%-- 下記のリンクも同様にコンテキストパスを使うとより安全です --%>
         <a href="<%=request.getContextPath()%>/user/menu.jsp" class="btn btn-menu">メニューに戻る</a>
         <a href="logout_manager.jsp" class="btn btn-logout"> ログアウト</a>
     </div>

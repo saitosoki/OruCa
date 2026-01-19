@@ -1,4 +1,4 @@
-package dao;  // ★ DAOクラスなので dao パッケージに所属！
+package dao;  
 
 import java.sql.Connection;
 import java.sql.Date;
