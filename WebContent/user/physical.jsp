@@ -45,10 +45,10 @@
                     { url: "https://youtu.be/-aDbF7Wm6gc", num: 3 }
                 ];
 
-                // 2. ランダムに1つ選択
+
                 const selectedVideo = videoData[Math.floor(Math.random() * videoData.length)];
 
-                // 3. 埋め込み用URLに変換
+
                 let embedUrl = "";
                 if (selectedVideo.url.includes("youtube.com/watch?v=")) {
                     embedUrl = selectedVideo.url.replace("watch?v=", "embed/");
@@ -234,7 +234,7 @@
 <script>
     let breathInterval;
     let breathCount = 0;
-    const MAX_BREATHS = 3; // 深呼吸の回数設定
+    const MAX_BREATHS = 3;
 
     function toggleBreathing() {
         const panel = document.getElementById('breathPanel');
@@ -242,23 +242,23 @@
         const status = document.getElementById('breathStatus');
 
         if (!panel.classList.contains('active')) {
-            // --- 開始処理 ---
+
             panel.classList.add('active');
             btn.innerText = "停止";
-            btn.className = "submit-button1"; // 赤色
+            btn.className = "submit-button1";
             breathCount = 0;
 
             startBreathingCycle(status);
         } else {
-            // --- 手動停止処理 ---
+
             stopBreathing();
         }
     }
 
-    //4-7-8呼吸法
+
 
     function startBreathingCycle(status) {
-        // 4秒(吸う) + 7秒(止める) + 8秒(吐く) = 19秒サイクル
+
         const cycleTime = 19000;
 
         const runOneCycle = () => {
@@ -272,17 +272,17 @@
             breathCount++;
             const countDisplay = "(" + breathCount + "/" + MAX_BREATHS + ")";
 
-            // 1. 吸う（4秒間）
+
             status.innerText = "鼻から吸って... (4秒) " + countDisplay;
 
-            // 2. 止める（4秒後から7秒間）
+
             setTimeout(() => {
                 if(document.getElementById('breathPanel').classList.contains('active')) {
                     status.innerText = "息を止めて... (7秒) " + countDisplay;
                 }
             }, 4000);
 
-            // 3. 吐く（11秒後から8秒間：4+7=11）
+
             setTimeout(() => {
                 if(document.getElementById('breathPanel').classList.contains('active')) {
                     status.innerText = "口から吐き出して... (8秒) " + countDisplay;

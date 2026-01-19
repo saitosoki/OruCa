@@ -17,9 +17,17 @@ public class MentalHistoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         request.setCharacterEncoding("UTF-8");
         String targetName = request.getParameter("name");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         if (targetName != null && !targetName.isEmpty()) {
             targetName = targetName.trim();
 

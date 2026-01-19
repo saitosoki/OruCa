@@ -11,11 +11,11 @@ public class StretchVideo {
     /** ストレッチ番号 */
     private int stretchNum;
 
-    // --- コンストラクタ ---
+
     public StretchVideo() {
-        // デフォルト値として指定のYouTube URLをセット
+
         this.videoUrl = "https://www.youtube.com/watch?v=oWHPQgdqVcQ";
-        this.stretchNum = 1; // 任意の初期値（必要に応じて変更）
+        this.stretchNum = 1;
     }
 
     public StretchVideo(String videoUrl, int stretchNum) {
@@ -23,6 +23,10 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     public String getVideoUrl() {
         return videoUrl;
     }
@@ -39,6 +43,10 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     @Override
     public String toString() {
         return "StretchVideoBean[" +

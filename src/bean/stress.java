@@ -4,9 +4,15 @@ import java.sql.Date;
 
 public class stress implements java.io.Serializable {
 
+<<<<<<< HEAD
 	private int user_num;             
 	private int stress_score_num;     
 	private Date date;                
+=======
+	private int user_num;
+	private int stress_score_num;
+	private Date date;
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
 	public stress() {}
 

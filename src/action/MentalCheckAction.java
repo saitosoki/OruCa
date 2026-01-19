@@ -23,16 +23,32 @@ public class MentalCheckAction extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         Object loginObj = session.getAttribute("user");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         String q1 = request.getParameter("e1");
         String q2 = request.getParameter("e2");
         String q3 = request.getParameter("e3");
         String q4 = request.getParameter("e4");
         String q5 = request.getParameter("e5");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         MentalCheck mc = new MentalCheck();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         if (loginObj instanceof LoginAction) {
             LoginAction user = (LoginAction) loginObj;
             mc.setName(user.getName());
@@ -45,15 +61,27 @@ public class MentalCheckAction extends HttpServlet {
             mc.setUserNum(9999);
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         mc.setQ1(convertToStar(q1));
         mc.setQ2(convertToStar(q2));
         mc.setQ3(convertToStar(q3));
         mc.setQ4(convertToStar(q4));
         mc.setQ5(convertToStar(q5));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         MentalCheckDAO dao = new MentalCheckDAO();
         int result = dao.insert(mc);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         if (result > 0) {
             response.sendRedirect(request.getContextPath() + "/user/mental.jsp?success=1");
         } else {

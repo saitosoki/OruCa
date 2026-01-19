@@ -52,6 +52,10 @@ public class MentalCheckDAO {
 
     public List<MentalCheck> findByName(String name) {
         List<MentalCheck> list = new ArrayList<>();
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         String sql = "SELECT * FROM MENTAL_CHECK WHERE NAME = ? ORDER BY ID DESC";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -68,9 +72,17 @@ public class MentalCheckDAO {
                     mc.setQ4(rs.getString("Q4"));
                     mc.setQ5(rs.getString("Q5"));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                     try {
                         mc.setDate(rs.getTimestamp(9));
                     } catch (Exception e) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                         mc.setDate(rs.getTimestamp(10));
                     }
 

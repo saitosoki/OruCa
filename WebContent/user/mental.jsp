@@ -28,6 +28,10 @@
     <h1>メンタルヘルス</h1>
     <main class="container">
         <%
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
             Object loginObj = session.getAttribute("user");
             String userName = "ゲスト";
 

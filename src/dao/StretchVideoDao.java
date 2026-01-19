@@ -13,6 +13,10 @@ import bean.StretchVideo;
 
 public class StretchVideoDao {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
     private static final String URL = "jdbc:h2:tcp://localhost/~/oruca";
 
@@ -20,6 +24,10 @@ public class StretchVideoDao {
 
     private static final String PASSWORD = "";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
     static {
 
@@ -35,7 +43,7 @@ public class StretchVideoDao {
 
     }
 
-    // --- INSERT ---
+
 
     public void insert(StretchVideo video) {
 
@@ -59,6 +67,10 @@ public class StretchVideoDao {
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
     public List<StretchVideo> findAll() {
 
@@ -94,7 +106,7 @@ public class StretchVideoDao {
 
     }
 
-    // --- SELECT（1件取得） ---
+
 
     public StretchVideo findById(int id) {
 
@@ -132,7 +144,7 @@ public class StretchVideoDao {
 
     }
 
-    // --- UPDATE ---
+
 
     public void update(int id, StretchVideo video) {
 
@@ -158,6 +170,10 @@ public class StretchVideoDao {
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
     public void delete(int id) {
 

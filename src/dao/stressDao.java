@@ -13,10 +13,18 @@ import bean.stress;
 
 public class stressDao {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	private final String URL = "jdbc:mysql://localhost:3306/your_db_name";
 	private final String USER = "your_user";
 	private final String PASS = "your_password";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public stressDao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -25,6 +33,10 @@ public class stressDao {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public void insert(stress s) {
 		String sql = "INSERT INTO stress (user_num, stress_score_num, date) VALUES (?, ?, ?)";
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);
@@ -40,6 +52,10 @@ public class stressDao {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public List<stress> selectByUser(int user_num) {
 		List<stress> list = new ArrayList<>();
 		String sql = "SELECT * FROM stress WHERE user_num = ? ORDER BY date";
@@ -65,6 +81,10 @@ public class stressDao {
 		return list;
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public stress selectByUserAndDate(int user_num, Date date) {
 		stress s = null;
 		String sql = "SELECT * FROM stress WHERE user_num = ? AND date = ?";

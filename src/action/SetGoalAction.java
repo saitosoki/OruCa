@@ -18,9 +18,17 @@ public class SetGoalAction extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String goal = request.getParameter("goal");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         HttpSession session = request.getSession();
         session.setAttribute("todayGoal", goal);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         response.sendRedirect("scheduleList.jsp");
     }
 }

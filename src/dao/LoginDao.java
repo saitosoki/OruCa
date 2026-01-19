@@ -24,6 +24,10 @@ public class LoginDao {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     /**
      * 指定されたログイン名とパスワードを持つユーザーをデータベースから検索する。
      */
@@ -42,8 +46,16 @@ public class LoginDao {
                 return null;
             }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
             con = getConnection();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
             st = con.prepareStatement(
                 "select * from USER where USER_NUM=? and PASSWORD=?"
             );
@@ -60,6 +72,10 @@ public class LoginDao {
                 customer.setLogin(rs.getString("EMAIL"));
                 customer.setPassword(rs.getString("PASSWORD"));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 customer.setName(rs.getString("NAME"));
                 customer.setDepartmentNum(rs.getString("DEPARTMENT_NUM"));
             }

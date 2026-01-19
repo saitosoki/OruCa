@@ -12,6 +12,10 @@ public class DBUtil {
 
 	    private static final String PASSWORD = "";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 
 	    static {
 
@@ -28,7 +32,7 @@ public class DBUtil {
         }
 
 		public static Connection getConnection() throws SQLException {
-			// TODO 自動生成されたメソッド・スタブ
+
 			return DriverManager.getConnection(URL, USER, PASSWORD);
 		}
 	}

@@ -31,28 +31,63 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         try {
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
             customer = dao.search(loginId, password);
 
             if (customer != null) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 customer.setPassword(null);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 Manegement_manager manager = new Manegement_manager();
 
+<<<<<<< HEAD
+                manager.setUserNum(customer.getId());
+                manager.setName(customer.getName());
+                manager.setDepartmentNum(customer.getDepartmentNum());
+=======
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
+
+<<<<<<< HEAD
+=======
                 manager.setUserNum(customer.getId());
                 manager.setName(customer.getName());
                 manager.setDepartmentNum(customer.getDepartmentNum());
 
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 session.setAttribute("user", manager);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 response.sendRedirect(request.getContextPath() + "/user/menu.jsp");
 
             } else {
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
                 session.removeAttribute("user");
                 request.setAttribute("errorMessage", "ログインIDまたはパスワードが違います");
                 request.getRequestDispatcher("/user/login.jsp").forward(request, response);
             }
 
         } catch (Exception e) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
             session.removeAttribute("user");
             e.printStackTrace();
             request.setAttribute("errorMessage", "システムエラーが発生しました。");
