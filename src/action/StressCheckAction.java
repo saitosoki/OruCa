@@ -34,10 +34,11 @@ public class StressCheckAction extends HttpServlet {
                 bean.Manegement_manager manager = (bean.Manegement_manager) loginObj;
                 sc.setName(manager.getName());
                 sc.setDepartmentNum("0");
-                sc.setUserNum(9999);
+
+                sc.setUserNum(manager.getId());
             }
         } else {
-            sc.setName("不明なユーザー");
+            sc.setName("ゲストユーザー");
             sc.setDepartmentNum("0");
             sc.setUserNum(0);
         }

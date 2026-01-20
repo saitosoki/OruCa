@@ -15,10 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/physical")
 public class Physical extends HttpServlet {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/oruca";
     private static final String USER = "sa";
     private static final String PASS = "";
@@ -29,10 +25,6 @@ public class Physical extends HttpServlet {
         String selectedUrl = "";
         int stretchNum = 0;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         String sql = "SELECT VIDEO_URL, STRETCH_NUM FROM PHYSICAL ORDER BY RAND() LIMIT 1";
 
         try {
@@ -50,10 +42,6 @@ public class Physical extends HttpServlet {
             e.printStackTrace();
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         request.setAttribute("videoUrl", selectedUrl);
         request.setAttribute("videoNo", stretchNum);
 

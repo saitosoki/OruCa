@@ -22,31 +22,15 @@ public class ScheduleAction extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         int userNum = Integer.parseInt(request.getParameter("userNum"));
         Date date = Date.valueOf(request.getParameter("date"));
         String comment = request.getParameter("comment");
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         Schedule schedule = new Schedule(userNum, date, comment);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         ScheduleDao dao = new ScheduleDaoImpl();
         dao.insert(schedule);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         response.sendRedirect("scheduleList.jsp");
     }
 }

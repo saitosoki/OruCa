@@ -1,10 +1,7 @@
 package bean;
 
 import java.sql.Date;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 public class Schedule {
     private int userNum;
     private Date date;

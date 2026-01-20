@@ -19,10 +19,6 @@ public class SentimentDao {
 	private final String USER = "your_user";
 	private final String PASS = "your_password";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public SentimentDao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -31,10 +27,6 @@ public class SentimentDao {
 		}
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
 	public void insert(sentimental s) {
 		String sql = "INSERT INTO sentiment (user_num, sentiment_score_num, date) VALUES (?, ?, ?)";
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);
@@ -85,7 +77,7 @@ public class SentimentDao {
 			 PreparedStatement ps = con.prepareStatement(sql)) {
 
 			ps.setInt(1, user_num);
-			ps.setDate(2, date);
+			setDate(2, date);
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {

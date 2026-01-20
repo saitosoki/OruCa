@@ -13,7 +13,6 @@ public class StretchVideo {
 
 
     public StretchVideo() {
-
         this.videoUrl = "https://www.youtube.com/watch?v=oWHPQgdqVcQ";
         this.stretchNum = 1;
     }
@@ -23,10 +22,6 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     public String getVideoUrl() {
         return videoUrl;
     }
@@ -43,15 +38,11 @@ public class StretchVideo {
         this.stretchNum = stretchNum;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
     @Override
     public String toString() {
         return "StretchVideoBean[" +
-               "videoUrl='" + videoUrl + '\'' +
-               ", stretchNum=" + stretchNum +
-               ']';
+                "videoUrl='" + videoUrl + '\'' +
+                ", stretchNum=" + stretchNum +
+                ']';
     }
 }

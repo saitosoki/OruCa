@@ -20,10 +20,8 @@ public class Login_managerServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
+
         String loginId = request.getParameter("login");
         String password = request.getParameter("password");
 
@@ -32,10 +30,6 @@ public class Login_managerServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         try {
         	customer = dao.search(loginId, password);
 

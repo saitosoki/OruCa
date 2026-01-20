@@ -19,19 +19,11 @@ public class Manegement_managerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         Manegement_managerDao dao = new Manegement_managerDao();
         List<Manegement_manager> list = dao.findAll();
 
         request.setAttribute("manegerList", list);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/saitosoki/OruCa.git
         request.getRequestDispatcher("manager/manegement_manager.jsp")
         .forward(request, response);
 
